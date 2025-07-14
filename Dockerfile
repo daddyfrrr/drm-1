@@ -1,9 +1,7 @@
-FROM python:3.10.4-slim-buster
+FROM python:3.10-slim
 
-# Avoid interactive prompts during install, and use apt-get
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install all packages in one RUN to reduce layers and avoid cache issues
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
