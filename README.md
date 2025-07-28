@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://heroku.com/deploy?template=https://github.com/devgaganin/save_restricted-content-telegram-bot-repo">
+  <a href="https://heroku.com/deploy?template=https://github.com/daddyfrrr/drm-1">
     <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" />
   </a>
 </p>
