@@ -1,3 +1,10 @@
+<p align="center">
+  <a href="https://heroku.com/deploy?template=https://github.com/devgaganin/save_restricted-content-telegram-bot-repo">
+    <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" />
+  </a>
+</p>
+
+
 <h1 align="center">
   Save Restricted Content Bot v3
 </h1>
