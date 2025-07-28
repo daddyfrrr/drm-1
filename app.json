@@ -2,89 +2,77 @@
   "name": "Save Restricted Content Bot v3",
   "description": "Save Restricted Content Bot by Team SPY",
   "logo": "https://lh3.googleusercontent.com/-HPcn7AqepNg/AAAAAAAAAAI/AAAAAAAAAAA/ALKGfknb1BkQiq-8_KUVOYcNAJ4swKivDQ/photo.jpg",
-  "keywords": ["python3", "telegram", "MusicBot", "telegram-bot", "pyrogram"],
   "repository": "https://github.com/devgaganin/save_restricted-content-telegram-bot-repo",
-  "success_url": "https://devgagan.in",
+  "keywords": ["python3", "telegram", "bot", "pyrogram"],
   "env": {
     "API_ID": {
       "description": "Get this value from https://my.telegram.org",
-      "value": "",
       "required": true
     },
     "API_HASH": {
       "description": "Get this value from https://my.telegram.org",
-      "value": "",
       "required": true
     },
     "BOT_TOKEN": {
       "description": "Bot token from @BotFather",
-      "value": "",
       "required": true
     },
     "MONGO_DB": {
       "description": "MongoDB connection URL (https://cloud.mongodb.com)",
-      "value": "",
       "required": true
     },
     "OWNER_ID": {
-      "description": "User ID(s) to be set as bot owner(s), separated by space (e.g., 1234 5678)",
-      "value": "",
+      "description": "Bot owner Telegram user ID(s), separated by space",
       "required": true
     },
     "DB_NAME": {
-      "description": "Database name for MongoDB (default: telegram_downloader)",
-      "value": "telegram_downloader",
+      "description": "MongoDB database name",
       "required": false
     },
     "STRING": {
-      "description": "Optional session string for logged-in user sessions",
-      "value": "",
+      "description": "Optional Pyrogram session string",
       "required": false
     },
     "FORCE_SUB": {
-      "description": "Channel ID (with -100 prefix) for forced subscription",
-      "value": "-10012345567",
+      "description": "Channel ID with -100 prefix for forced subscription",
       "required": true
     },
     "LOG_GROUP": {
-      "description": "Log channel/group ID (with -100 prefix) where the bot will send logs",
-      "value": "-1001234456",
+      "description": "Channel/group ID with -100 prefix for logging",
       "required": true
     },
     "MASTER_KEY": {
-      "description": "Master key used for session encryption",
-      "value": "gK8HzLfT9QpViJcYeB5wRa3DmN7P2xUq",
+      "description": "Master key for session encryption",
       "required": false
     },
     "IV_KEY": {
-      "description": "Initialization vector key for decryption",
-      "value": "s7Yx5CpVmE3F",
+      "description": "IV key for encryption",
       "required": false
     },
     "YT_COOKIES": {
-      "description": "Cookies for YouTube downloads (in Netscape format)",
-      "value": "",
+      "description": "YouTube cookies in Netscape format",
       "required": false
     },
     "INSTA_COOKIES": {
-      "description": "Cookies for Instagram downloads (in Netscape format)",
-      "value": "",
+      "description": "Instagram cookies in Netscape format",
       "required": false
     },
     "FREEMIUM_LIMIT": {
-      "description": "Limit for freemium users (in MB or desired unit)",
-      "value": "0",
+      "description": "Limit for free users (in MB)",
       "required": false
     },
     "PREMIUM_LIMIT": {
-      "description": "Limit for premium users (in MB or desired unit)",
-      "value": "500",
+      "description": "Limit for premium users (in MB)",
       "required": false
     }
   },
   "buildpacks": [
-    { "url": "heroku/python" },
-    { "url": "https://github.com/heroku/heroku-buildpack-activestorage-preview" }
+    { "url": "heroku/python" }
   ],
-  "stack": "container"
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
 }
